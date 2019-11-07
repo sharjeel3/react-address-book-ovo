@@ -1,10 +1,11 @@
 import React from 'react';
-import logo from '../../logo.svg';
+import { Logo } from '../Logo';
+import { StyledHeader } from './styles';
 
 export const Header = () => {
   return (
-    <header>
-      <img src={logo} alt="Address book app" />
-    </header>
+    <StyledHeader>
+      <Logo />
+    </StyledHeader>
   );
 };

@@ -1,12 +1,7 @@
 import React from 'react';
 import { Header } from '../Header';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
-
-// A dummy wrapper
-const Wrapper = styled.div`
-  position: relative;
-`;
+import { Wrapper } from './styles';
 
 export const Layout = ({ children }) => {
   return (

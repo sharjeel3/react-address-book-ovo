@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Form } from '../../ui-library/Form';
 import { TextInput } from '../../ui-library/TextInput';
 import { useAddressBookFormHook } from '../../hooks/Form';
 import { Button } from '../../ui-library/Button';
-import { useAddressBookHook } from '../../hooks/AddressBook';
 
-export const AddAddressForm = () => {
+export const AddAddressForm = props => {
+  const { addAddress } = props;
+
   const [validation, setValidation] = useState({});
 
   const {
@@ -20,8 +22,6 @@ export const AddAddressForm = () => {
     getFormValidation,
     resetForm
   } = useAddressBookFormHook();
-
-  const { addAddress } = useAddressBookHook();
 
   const onFormSubmit = event => {
     event.preventDefault();
@@ -71,4 +71,8 @@ export const AddAddressForm = () => {
       <Button>Add</Button>
     </Form>
   );
+};
+
+AddAddressForm.propTypes = {
+  addAddress: PropTypes.func.isRequired
 };

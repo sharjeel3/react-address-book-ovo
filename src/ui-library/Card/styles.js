@@ -6,6 +6,7 @@ export const StyledCard = styled.div`
   padding: 1.5em 2.5em 1.5em 1.5em;
   border-radius: 0.5em;
   margin-bottom: 1.5em;
+  position: relative;
   &:last-child {
     margin-bottom: 0;
   }

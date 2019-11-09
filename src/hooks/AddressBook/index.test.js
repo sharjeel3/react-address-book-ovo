@@ -19,7 +19,11 @@ describe('USE ADDRESS BOOK HOOK', () => {
     expect(result.current.addressList[0].lastName).toBe('James');
     expect(result.current.addressList[0].department).toBe('Foodie');
     expect(result.current.addressList[0].phone).toBe(533222);
+
     expect(result.current.addressList[0]._createdAt).not.toBe(NaN);
     expect(typeof result.current.addressList[0]._createdAt).toBe('number');
+
+    expect(result.current.addressList[0]._id).not.toBe('');
+    expect(typeof result.current.addressList[0]._id).toBe('string');
   });
 });

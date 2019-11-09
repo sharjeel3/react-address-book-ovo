@@ -5,10 +5,10 @@ import { useAddressBookHook } from '../../hooks/AddressBook';
 import { AddressBook } from '../../components/AddressBook';
 
 export const AddressBookView = () => {
-  const { addAddress, addressList } = useAddressBookHook();
+  const { addAddress, addressList, deleteAddress } = useAddressBookHook();
 
-  const formProps = { addAddress };
-  const addressBookProps = { addressList };
+  const formProps = { onAdd: addAddress };
+  const addressBookProps = { addressList, onDelete: deleteAddress };
 
   return (
     <Container>

@@ -6,7 +6,7 @@ import { useAddressBookFormHook } from '../../hooks/Form';
 import { Button } from '../../ui-library/Button';
 
 export const AddAddressForm = props => {
-  const { addAddress } = props;
+  const { onAdd } = props;
 
   const [validation, setValidation] = useState({});
 
@@ -28,7 +28,7 @@ export const AddAddressForm = props => {
     const { error, validationResponse } = getFormValidation();
     setValidation(validationResponse);
     if (error) return false;
-    addAddress({
+    onAdd({
       firstName,
       lastName,
       department,
@@ -74,5 +74,5 @@ export const AddAddressForm = props => {
 };
 
 AddAddressForm.propTypes = {
-  addAddress: PropTypes.func.isRequired
+  onAdd: PropTypes.func.isRequired
 };

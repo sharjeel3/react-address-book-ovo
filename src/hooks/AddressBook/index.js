@@ -17,7 +17,15 @@ export const useAddressBookHook = () => {
     setAddressList([...addressList, { ...newAddress, _id }]);
   };
 
-  const removeAddress = () => {};
+  const deleteAddress = _id => {
+    const index = addressList.findIndex(item => item._id === _id);
+    if (index !== -1) {
+      // Create a copy before splice
+      const newAddressList = addressList.slice();
+      newAddressList.splice(index, 1);
+      setAddressList(newAddressList);
+    }
+  };
 
   const sortAddressList = () => {};
 
@@ -26,7 +34,7 @@ export const useAddressBookHook = () => {
   return {
     addressList,
     addAddress,
-    removeAddress,
+    deleteAddress,
     sortAddressList,
     filterAddressList
   };

@@ -4,7 +4,7 @@ import { Root } from './styles';
 import { AddressCard } from './AddressCard';
 
 export const AddressBook = props => {
-  const { addressList } = props;
+  const { addressList, onDelete } = props;
   if (!addressList || addressList.length === 0) {
     return <Root>No addresses found. Start by creating a new one.</Root>;
   }
@@ -12,7 +12,7 @@ export const AddressBook = props => {
   return (
     <Root>
       {addressList.map((address, ii) => {
-        const { firstName, lastName, department, phone } = address;
+        const { firstName, lastName, department, phone, _id } = address;
         return (
           <AddressCard
             key={`${firstName}${ii}`}
@@ -20,6 +20,8 @@ export const AddressBook = props => {
             lastName={lastName}
             department={department}
             phone={phone}
+            _id={_id}
+            onDelete={onDelete}
           />
         );
       })}
@@ -28,5 +30,6 @@ export const AddressBook = props => {
 };
 
 AddressBook.propTypes = {
-  addressList: PropTypes.array.isRequired
+  addressList: PropTypes.array.isRequired,
+  onDelete: PropTypes.func.isRequired
 };

@@ -26,4 +26,25 @@ describe('USE ADDRESS BOOK HOOK', () => {
     expect(result.current.addressList[0]._id).not.toBe('');
     expect(typeof result.current.addressList[0]._id).toBe('string');
   });
+
+  it('should delete address', () => {
+    const { result } = renderHook(() => useAddressBookHook());
+    const props = {
+      firstName: 'John',
+      lastName: 'Own',
+      department: 'Ping pong',
+      phone: 34433654
+    };
+    act(() => {
+      result.current.addAddress(props);
+    });
+
+    expect(result.current.addressList.length).toBe(1);
+
+    act(() => {
+      result.current.deleteAddress(result.current.addressList[0]._id);
+    });
+
+    expect(result.current.addressList.length).toBe(0);
+  });
 });

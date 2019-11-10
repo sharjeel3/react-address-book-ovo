@@ -21,6 +21,7 @@ export const AddressBookFilter = props => {
       <TextInput
         value={searchTerm}
         onChange={onSearch}
+        type="search"
         id="search-address-book"
         label="Search address book"
       />

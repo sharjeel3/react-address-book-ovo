@@ -10,7 +10,12 @@ export const AddressBookView = () => {
     addressList,
     deleteAddress,
     sortAddressList,
-    sortOption
+    filterAddressList,
+    searchAddressList,
+    sortOption,
+    searchTerm,
+    filterOption,
+    isAddressBookEmpty
   } = useAddressBookHook();
 
   const formProps = { onAdd: addAddress };
@@ -19,7 +24,12 @@ export const AddressBookView = () => {
     addressList,
     onDelete: deleteAddress,
     onSort: sortAddressList,
-    sortOption
+    onSearch: searchAddressList,
+    onFilterChange: filterAddressList,
+    sortOption,
+    searchTerm,
+    filterOption,
+    isAddressBookEmpty
   };
 
   return (

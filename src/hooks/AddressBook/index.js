@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import hash from 'object-hash';
-import { getSortedAddressBook } from './helpers';
+import { getSortedAddressBook, getFilteredAddressBook } from './helpers';
 import { initialState } from './addressbook';
 
 export const useAddressBookHook = () => {
   const [addressList, setAddressList] = useState([...initialState]);
   const [sortOption, setSortOption] = useState('_createdAt');
+  const [filterOption, setFilterOption] = useState('name');
+  const [searchTerm, setSearchTerm] = useState('');
 
   const addAddress = props => {
     const { firstName, lastName, department, phone } = props;
@@ -34,14 +36,30 @@ export const useAddressBookHook = () => {
     setSortOption(key);
   };
 
-  const filterAddressList = () => {};
+  const filterAddressList = option => {
+    setFilterOption(option);
+  };
+
+  const searchAddressList = value => {
+    setSearchTerm(value);
+  };
+
+  const filteredSortedAddressList = getFilteredAddressBook(
+    getSortedAddressBook(addressList, sortOption),
+    filterOption,
+    searchTerm
+  );
 
   return {
-    addressList: getSortedAddressBook(addressList, sortOption),
+    addressList: filteredSortedAddressList,
     addAddress,
     deleteAddress,
     sortAddressList,
     filterAddressList,
-    sortOption
+    searchAddressList,
+    sortOption,
+    searchTerm,
+    filterOption,
+    isAddressBookEmpty: addressList.length === 0
   };
 };

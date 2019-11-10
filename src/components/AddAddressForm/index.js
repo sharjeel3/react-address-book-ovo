@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Form } from '../../ui-library/Form';
 import { TextInput } from '../../ui-library/TextInput';
 import { useAddressBookFormHook } from '../../hooks/Form';
 import { Button } from '../../ui-library/Button';
+import { StyledForm } from './styles';
 
 export const AddAddressForm = props => {
   const { onAdd } = props;
@@ -38,7 +38,7 @@ export const AddAddressForm = props => {
   };
 
   return (
-    <Form onSubmit={onFormSubmit}>
+    <StyledForm onSubmit={onFormSubmit}>
       <TextInput
         id="firstName"
         onChange={setFirstName}
@@ -69,7 +69,7 @@ export const AddAddressForm = props => {
         type="number"
       />
       <Button>Add</Button>
-    </Form>
+    </StyledForm>
   );
 };
 

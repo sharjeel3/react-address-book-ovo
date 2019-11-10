@@ -50,18 +50,22 @@ Polyfills for IE11 are not currently included. Please use latest version of Goog
   * Search address book by name
   * Delete an entry from address book
   * Sort addresses by last name
-* I have added two hooks which allow us to add new address and to store addresses. Filter and sort functionality is also provided by hooks.
+* Have added two custom hooks which allow us to add new address and to store addresses. Filter and sort functionality is also provided by hooks.
 * Address Book view 'uses' both hooks and passes props down to components for rendering
+* Have added some unit tests for hooks and UI components to showcase testing approach
+* Have added just enough UI components and styles to make the app useful
 
 ## Approach
 * You might find the business logic approach a bit unusual as compared to most production React apps at the moment. The solution relies on React Hooks to provide the props and callbacks the views can 'use'. This is done specifically to improve code composition and follow better functional programming pattern while avoiding classes.
 * I have added a UI library for base level user interface components.
+* My focus was to showcase React app architecture and building business logic in React using Hooks
 
 ## What's there for future
 * Sorting is done in a very basic manner. The sorting function can be generalized. For very large arrays, it is better to go for binary sorting.
 * Filtering is done using a simple search on strings. A better option would be to use [Fuse](https://github.com/krisk/fuse)
 * Have not done much work on responsive styling. Can do more there with grid, typography and overall styles
 * Can improve unit tests throughout the app
-* Project is using create-react-app tool for development and build. While this is easy to use, it may not be easy to use in an environment where we need customisations to build steps for CI/CD. A custom webpack configuration would be needed otherwise.
-* UI Library should be linked to components in design system with storybook or something similar. 
+* Project is using create-react-app tool for development and build. While this is easy to use, it may not be feasible option in an environment where we need customisations to build steps for CI/CD. A custom webpack configuration would be needed otherwise.
+* UI Library should be linked to components in design system with storybook or something similar.
+* Animations can be added as required 
 * Would need React Router for routing

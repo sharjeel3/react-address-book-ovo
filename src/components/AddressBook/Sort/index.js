@@ -15,7 +15,15 @@ const options = [
 
 export const AddressBookSort = props => {
   const { onSort, sortOption } = props;
-  return <Dropdown onChange={onSort} value={sortOption} options={options} id="sort-address-book" />;
+  return (
+    <Dropdown
+      onChange={onSort}
+      label="Sort by"
+      value={sortOption}
+      options={options}
+      id="sort-address-book"
+    />
+  );
 };
 
 AddressBookSort.propTypes = {

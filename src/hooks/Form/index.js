@@ -1,5 +1,20 @@
 import { useState } from 'react';
 
+/***
+ * Hook to handle controlled form inputs for adding a new address
+ * @returns {{
+ * firstName: state for first name input,
+ * lastName: state for last name input,
+ * setLastName: setter for last name,
+ * phone: state for phone input,
+ * setFirstName: setter for first name input,
+ * setDepartment: setter for department input,
+ * getFormValidation: function to get error status and validation messages,
+ * resetForm: resets all inputs on form,
+ * setPhone: setter for phone input,
+ * department: setter for department input
+ * }}
+ */
 export const useAddressBookFormHook = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');

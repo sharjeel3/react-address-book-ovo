@@ -2,6 +2,21 @@ import { useState } from 'react';
 import hash from 'object-hash';
 import { getSortedAddressBook, getFilteredAddressBook } from './helpers';
 
+/***
+ * Hook to store address book state and provide search and filtering options
+ * @returns {{
+ * sortOption: selected sort option,
+ * filterOption: selected filter option,
+ * searchTerm: current search query,
+ * filterAddressList: handler function to set filter option,
+ * sortAddressList: handler function to set sorting option,
+ * addressList: sorted & filtered address book ready for rendering,
+ * addAddress: handler function to add a new address ,
+ * deleteAddress: handler function to delete an address from book,
+ * isAddressBookEmpty: set when there are no address in state,
+ * searchAddressList: handler function for search input
+ * }}
+ */
 export const useAddressBookHook = () => {
   const [addressList, setAddressList] = useState([]);
   const [sortOption, setSortOption] = useState('_createdAt');

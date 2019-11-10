@@ -12,3 +12,26 @@ export const getSortedAddressBook = (list, key = '_createdAt') => {
     return 0;
   });
 };
+
+/***
+ * Simple function to get the filtered addresses
+ * @param list: array to filter
+ * @param key: filter option
+ * @param searchTerm: string to search for
+ * @returns a new array with filtered results
+ */
+export const getFilteredAddressBook = (list, key = 'name', searchTerm) => {
+  if (!searchTerm) return list;
+
+  return list.filter(address => {
+    const { firstName, lastName, department } = address;
+    switch (key) {
+      case 'name':
+        return firstName.indexOf(searchTerm) !== -1 || lastName.indexOf(searchTerm) !== -1;
+      case 'department':
+        return department.indexOf(searchTerm) !== -1;
+      default:
+        return true;
+    }
+  });
+};

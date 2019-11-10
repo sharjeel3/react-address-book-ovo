@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import hash from 'object-hash';
+import { getSortedAddressBook } from './helpers';
+import { initialState } from './addressbook';
 
 export const useAddressBookHook = () => {
-  const [addressList, setAddressList] = useState([]);
+  const [addressList, setAddressList] = useState([...initialState]);
+  const [sortOption, setSortOption] = useState('_createdAt');
 
   const addAddress = props => {
     const { firstName, lastName, department, phone } = props;
@@ -27,15 +30,18 @@ export const useAddressBookHook = () => {
     }
   };
 
-  const sortAddressList = () => {};
+  const sortAddressList = key => {
+    setSortOption(key);
+  };
 
   const filterAddressList = () => {};
 
   return {
-    addressList,
+    addressList: getSortedAddressBook(addressList, sortOption),
     addAddress,
     deleteAddress,
     sortAddressList,
-    filterAddressList
+    filterAddressList,
+    sortOption
   };
 };

@@ -3,6 +3,7 @@ This is a basic address book built with following:
 
 * React 16.11
 * React Hooks
+* Styled Components
 * Jest / Enzyme
 
 This project is bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
@@ -59,6 +60,10 @@ Polyfills for IE11 are not currently included. Please use latest version of Goog
 * You might find the business logic approach a bit unusual as compared to most production React apps at the moment. The solution relies on React Hooks to provide the props and callbacks the views can 'use'. This is done specifically to improve code composition and follow better functional programming pattern while avoiding classes.
 * I have added a UI library for base level user interface components.
 * My focus was to showcase React app architecture and building business logic in React using Hooks
+* Form inputs are controlled and do not store any local state
+* App is using prop-types for props validation
+* Code styling and formatting options can be seen in eslint and prettier config
+* Have used simple constants for colours instead of theme (Not required for this simple app) 
 
 ## What's there for future
 * Sorting is done in a very basic manner. The sorting function can be generalized. For very large arrays, it is better to go for binary sorting.
@@ -69,3 +74,6 @@ Polyfills for IE11 are not currently included. Please use latest version of Goog
 * UI Library should be linked to components in design system with storybook or something similar.
 * Animations can be added as required 
 * Would need React Router for routing
+* Icons are currently using SVG files. Icon component can be generalized for all icons
+* Fonts can be locally hosted
+* Accessibility can be improved

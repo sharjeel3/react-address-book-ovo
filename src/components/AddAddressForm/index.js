@@ -45,27 +45,27 @@ export const AddAddressForm = props => {
         id="firstName"
         onChange={setFirstName}
         message={validation.firstName}
-        label="First name"
+        label="First name *"
         value={firstName}
       />
       <TextInput
         id="lastName"
         onChange={setLastName}
         message={validation.lastName}
-        label="Last name"
+        label="Last name *"
         value={lastName}
       />
       <TextInput
         id="department"
         onChange={setDepartment}
         message={validation.department}
-        label="Department"
+        label="Department *"
         value={department}
       />
       <TextInput
         id="phone"
         onChange={setPhone}
-        label="Phone"
+        label="Phone *"
         message={validation.phone}
         value={phone}
         type="number"

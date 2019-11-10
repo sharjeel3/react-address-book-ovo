@@ -77,3 +77,4 @@ Polyfills for IE11 are not currently included. Please use latest version of Goog
 * Icons are currently using SVG files. Icon component can be generalized for all icons
 * Fonts can be locally hosted
 * Accessibility can be improved
+* Form validation can be improved to take into consideration touch and blur events for instant validation without waiting for form submission

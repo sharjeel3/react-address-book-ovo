@@ -43,14 +43,14 @@ export const AddAddressForm = props => {
         id="firstName"
         onChange={setFirstName}
         message={validation.firstName}
-        label="First Name"
+        label="First name"
         value={firstName}
       />
       <TextInput
         id="lastName"
         onChange={setLastName}
         message={validation.lastName}
-        label="Last Name"
+        label="Last name"
         value={lastName}
       />
       <TextInput

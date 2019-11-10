@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import hash from 'object-hash';
 import { getSortedAddressBook, getFilteredAddressBook } from './helpers';
-import { initialState } from './addressbook';
 
 export const useAddressBookHook = () => {
-  const [addressList, setAddressList] = useState([...initialState]);
+  const [addressList, setAddressList] = useState([]);
   const [sortOption, setSortOption] = useState('_createdAt');
   const [filterOption, setFilterOption] = useState('name');
   const [searchTerm, setSearchTerm] = useState('');

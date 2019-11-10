@@ -11,6 +11,13 @@ export const NormalText = styled.p`
   }
 `;
 
+export const Heading = styled.h2`
+  font-size: 2em;
+  line-height: 3em;
+  color: ${brandColors.darkGrey};
+  margin-bottom: 0.5em;
+`;
+
 export const CardText = styled(NormalText)`
   ${props =>
     props.bold &&

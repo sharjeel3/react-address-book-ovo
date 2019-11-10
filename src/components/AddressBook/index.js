@@ -29,6 +29,7 @@ export const AddressBook = props => {
 
   return (
     <Root>
+      <Text heading>Your address book</Text>
       {isAddressBookEmpty ? null : (
         <>
           <AddressBookSort onSort={onSort} sortOption={sortOption} />

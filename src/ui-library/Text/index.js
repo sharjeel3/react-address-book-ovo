@@ -1,21 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CardText, NormalText } from './styles';
+import { CardText, NormalText, Heading } from './styles';
 
 const getTextComponent = props => {
-  const { cardText } = props;
+  const { cardText, heading } = props;
   switch (true) {
     case cardText:
       return CardText;
+    case heading:
+      return Heading;
     default:
       return NormalText;
   }
 };
 
 export const Text = props => {
-  const { children, cardText, bold } = props;
+  const { children, cardText, bold, heading } = props;
 
-  const C = getTextComponent({ cardText });
+  const C = getTextComponent({ cardText, heading });
 
   const textProps = { bold };
 
@@ -25,5 +27,6 @@ export const Text = props => {
 Text.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
   cardText: PropTypes.bool,
+  heading: PropTypes.bool,
   bold: PropTypes.bool
 };
